@@ -1,0 +1,13 @@
+name: Push to Main
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    testing:
+        runs-on: ubuntu-latest
+
+        steps:
+            - run: echo "success"
