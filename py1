@@ -1,0 +1,3 @@
+s = chr(19) + chr(9) + chr(2) + chr(9)
+print(chr(9))
+print(s+"test")
