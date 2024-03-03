@@ -1,0 +1,21 @@
+import io
+import sys
+import unittest
+
+class TestPrintStatements(unittest.TestCase):
+    def test_print_statements(self):
+        captured_output = io.StringIO()
+        sys.stdout = captured_output
+
+        # BEGIN: /Users/promb/Newtest/py1
+        s = chr(19) + chr(9) + chr(2) + chr(9)
+        print(chr(9))
+        print(s+"test")
+        # END: /Users/promb/Newtest/py1
+
+        sys.stdout = sys.__stdout__
+        output = captured_output.getvalue().strip().split('\n')
+        self.assertEqual(len(output), 2)
+
+if __name__ == '__main__':
+    unittest.main()
